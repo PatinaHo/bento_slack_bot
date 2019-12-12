@@ -25,7 +25,7 @@ SECRET_KEY = 'vo1^iq^y!mlx5&((_zqc^wo4vm8b!g_y59ma+dp0^s9$e1g9y1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['order-bento-bot.herokuapp.com']
 
 
 # Application definition
