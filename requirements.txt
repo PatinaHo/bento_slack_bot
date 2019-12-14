@@ -3,4 +3,3 @@ gunicorn==19.3.0
 slackclient>=2.0.0
 certifi==0.0.8
 djangorestframework
-boto

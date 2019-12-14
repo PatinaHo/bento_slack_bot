@@ -12,9 +12,8 @@ import certifi
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from boto.s3.connection import S3Connection
 
-SLACK_VERIFICATION_TOKEN = S3Connection(os.environ['SLACK_VERIFICATION_TOKEN'])
+SLACK_VERIFICATION_TOKEN = os.environ['SLACK_VERIFICATION_TOKEN']
 
 # SLACK_VERIFICATION_TOKEN = getattr(settings, 'SLACK_VERIFICATION_TOKEN', None)
 
