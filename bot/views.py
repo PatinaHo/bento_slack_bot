@@ -22,8 +22,9 @@ class Events(APIView):
             return Response(status=status.HTTP_403_FORBIDDEN)
 
         # verification challenge
-        if slack_message.get('type') == 'url_verification':        #
-            return Response(data=slack_message,                    #
+        if slack_message.get('type') == 'url_verification':    
+            print(slack_message)    #
+            return Response(data=slack_message.get('challenge'),                    #
                             status=status.HTTP_200_OK)             #
 
         return Response(status=status.HTTP_200_OK)
