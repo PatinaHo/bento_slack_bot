@@ -20,14 +20,15 @@ SLACK_VERIFICATION_TOKEN = os.environ['SLACK_VERIFICATION_TOKEN']
 class Events(APIView):
     def post(self, request, *args, **kwargs):
         slack_message = request.data
-        print(slack_message)
+        print(slack_message.get('challenge'))
         print("SLACK_VERIFICATION_TOKEN =", SLACK_VERIFICATION_TOKEN)
         if slack_message.get('token') != SLACK_VERIFICATION_TOKEN:
+            print("Enter 'token' block")
             return Response(status=status.HTTP_403_FORBIDDEN)
 
         # verification challenge
         if slack_message.get('type') == 'url_verification':    
-            print(slack_message)    #
+            print("Enter 'type' block")
             return Response(data=slack_message.get('challenge'),                    #
                             status=status.HTTP_200_OK)             #
 
