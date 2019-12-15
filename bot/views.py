@@ -33,10 +33,13 @@ class Events(APIView):
 
         # greet bot
         if 'event' in slack_message:                              #4
+            print("Enter 'event' block!")
             event_message = slack_message.get('event')            #
+            print("event_message =", event_message)
             
             # ignore bot's own message
             if event_message.get('subtype') == 'bot_message':     #5
+                print("Enter 'bot_message' block!")
                 return Response(status=status.HTTP_200_OK)        #
             
             # process user's message
