@@ -48,7 +48,7 @@ class Events(APIView):
             channel = event_message.get('channel')                #
             bot_text = 'Hi <@{}> :wave:'.format(user)             #
             if 'hi' in text.lower():                              #7
-                Client.api_call(method='chat.postMessage',        #8
+                Client.chat_postMessage(                          #8 method='chat.postMessage',
                                 channel=channel,                  #
                                 text=bot_text)                    #
                 return Response(status=status.HTTP_200_OK)        #9
